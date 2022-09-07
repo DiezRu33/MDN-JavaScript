@@ -1,0 +1,54 @@
+* {
+	background: no-repeat;
+	margin: 0;
+}
+
+h1 {
+	background: linear-gradient(to right, #15f,#52f,#51f,#55e);
+	color: #fff;
+	justify-content: center;
+	display: flex;
+	padding: 5px;
+	transition: 1s all;
+	margin-bottom: 10px;
+}
+h1:hover {
+	background: radial-gradient(circle, #f54,#f2f,#f22,#ff2);
+	transition: 1s all;
+	padding: 7px;
+	opacity: .8;
+}
+
+body {
+	background: linear-gradient(to right, #15f, #528 ,#f9f);
+	font-family: sans-serif;
+}
+
+p {
+	font-weight: bold;
+	display: ;
+	width: 50%;
+}
+
+.lastResult {
+	padding: 3px;
+	width: 200px;
+}
+	.guessCount {
+		width: 200px;
+
+}
+.guessField:hover {
+	background: #888;
+	transition: 1s all;
+}
+.guessSubmit:hover {
+	background: #888;
+	transition: 1s all;
+}
+.guessField{	background: #fff;
+	transition: .5s all;
+}
+.guessSubmit{	background: #fff;
+	transition: .5s all;
+}

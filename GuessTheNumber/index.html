@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<title>Probando JavaScript con MDN</title>
+</head>
+<body>
+<div><h1>GUESS THE NUMBER</h1></div>
+<div>
+	<p>Hemos seleccionado un número aleatorio entre 1 y 100. Fíjate si lo puedes adivinar en 10 turnos o menos. Vamos a decirte si tu número es más alto o más bajo.</p>
+</div>
+<div class="form">
+	<label for="guessField">Adivina el número:</label>
+	<input type="text" id="guessField" class="guessField">
+	<input type="submit" value="Enviar Respuesta" class="guessSubmit">
+</div>
+
+<div class="resultParas">
+	<p class="guesses"></p>
+	<p class="lastResult"></p>
+	<p class="lowOrHi"></p>
+	<p class="guessCount"></p>
+</div>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
