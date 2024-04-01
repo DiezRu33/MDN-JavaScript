@@ -1,1 +1,20 @@
+li{
+  margin-bottom:10px ;
+	background: #cdd;
+	display: flex;
+  width: 60%;
+	justify-content: center;
+	border-radius: 10px;
+	border: 1px solid #888;
+}
 
+li, button{
+	font-size: 20px;
+	margin-left: 20px;
+	color: #666;
+}
+
+button{
+	font-size: 15px;
+	border-radius: 20px;
+}
