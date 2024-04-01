@@ -1,25 +1,28 @@
 
 const AudioContext = window.AudioContext || window.webkitAudioContext;
+//declarar propiedad AudioContext de window; 
 const audioCtx = new AudioContext();
-//primero declaramos un AudioContext dentro de la cual manipularemos el track;
+// nueva instancia de AudioContext en audioCtx
 
 const audioElement=document.querySelector('audio');
 const playBtn=document.querySelector('button');
 const volumeSlider=document.querySelector('.volume');
+// audio, button y la clase volume
+// audioElement, playBtn, volumeSlider
 
 const audioSource = audioCtx.createMediaElementSource(audioElement)
-//declaramos constantes para almacenar el <audio>,<button> e <input>, usando el metodo AudioContext.createElementSource() para crear MediaElementAudioSourceNode representando el source del audio;
+// asignar a audioSource la propiedad createMediaElementSource() de audioCtx pasando por parametro audioElement
 
-// play/pause audio:
-playBtn.addEventListener('click', ()=>{
 
+playBtn.addEventListener('click', () => {
+// click a playBtn
 	if(audioCtx.state === 'suspended') {
+		// caso 'suspended'
 		audioCtx.resume()
 	}
-	//chequeando si esta en estado suspendido (autoplay policy);
 
-	if (playBtn.getAttribute('class')=== 'paused'){
-		//si el track esta pausado, que se le de play
+	if (playBtn.getAttribute('class') === 'paused'){
+		// si playBtn obtiene atributo class igual a paused
 		audioElement.play();
 		playBtn.setAttribute('class','playing');
 		playBtn.textContent = 'Pause'
@@ -31,22 +34,20 @@ playBtn.addEventListener('click', ()=>{
 	}
 })
 
-// si el track termina:
 audioElement.addEventListener('ended', () => {
+	// ended action en audioElement
 	playBtn.setAttribute('class', 'paused');
 	playBtn.textContent = 'Play'
 })
 
 const gainNode = audioCtx.createGain();
+// asignar a gainNode la propiedad createGain() de audioCtx para ajustar el volumen 
 
-//creamos el objeto gainNode usando el metodo AudioContext.createGain(), puede ser usado para ajustar el volumen,
-//creando otro objeto de escucha que cambia el valor de la ganancia del audio graph(volumen) cuando el valor del slider cambie:
-//volumen
 volumeSlider.addEventListener('input', () => {
 	gainNode.gain.value = volumeSlider.value;
 })
 
-//conectar los diferentes nodos in el graph up del audio, se hace usando el metodo AudioNode.connect() disponible en cada tipo de nodo:
+// connect gainNode en audioSource
+// connect destination de audioCtx 
 audioSource.connect(gainNode).connect(audioCtx.destination);
-//En el Web Audio API el punto de ntrada es el objeto AudioContext, necesita ser usado para hacer cualquier manipulaciòn.
-//La API del punto de entrada del Document Object Model(DOM) esta con el objeto Document
+// API Audio Web en el browser 
