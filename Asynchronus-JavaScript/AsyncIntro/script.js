@@ -6,12 +6,12 @@ document.querySelector('#xhr').addEventListener('click', () => {
 	const xhr = new XMLHttpRequest();
 
 	xhr.addEventListener('loadend', () => {
-		log.textContent = `${log.textContent} terminó con el estatus: ${xhr.status}`;
+		log.textContent = `${log.textContent} ended with status: ${xhr.status}`;
 	})
 
 	xhr.open('GET','https://raw.githubusercontent.com/mdn/content/main/files/en-us/_wikihistory.json');
 	xhr.send();
-	log.textContent = `${log.textContent}Empezó la tarea XHR`});
+	log.textContent = `${log.textContent} start XHR homework`});
 
 document.querySelector('#reload').addEventListener('click', () => {
 	log.textContent = '';
